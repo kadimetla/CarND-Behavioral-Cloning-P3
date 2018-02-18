@@ -60,6 +60,7 @@ model consisted of the following layers:
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 160x320x3 RGB image   							| 
 | Image Cropping    | 70 rows pixels from the top of the image <br> 25 rows pixels from the bottom of the image <br> 0 columns of pixels from the left of the image <br> 0 columns of pixels from the right of the image |
+| Convolution 24x5x5 | | 
 
 
 My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
