@@ -59,8 +59,19 @@ model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 160x320x3 RGB image   							| 
+| Input Normalization    | (pixel_value/255.0) - 0.5           |
 | Image Cropping    | 70 rows pixels from the top of the image <br> 25 rows pixels from the bottom of the image <br> 0 columns of pixels from the left of the image <br> 0 columns of pixels from the right of the image |
-| Convolution 24x5x5 | | 
+| Convolution 5x5 | stride 2x2 output 24 channels | 
+| Activation      | relu                          |
+| Convolution 5x5 | stride 2x2 output 36 channels | 
+| Activation      | relu                          |
+| Convolution 5x5 | stride 2x2 output 48 channels | 
+| Activation      | relu  
+| Convolution 3x3 | stride 1x1 output 64 channels | 
+| Activation      | relu  |
+| Convolution 3x3 | stride 1x1 output 64 channels | 
+| Activation      | relu  |
+
 
 
 My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
