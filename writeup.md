@@ -54,13 +54,14 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-model consisted of the following layers:
+model layers:
+The model includes RELU layers to introduce nonlinearity, and the data is normalized in the model using a Keras lambda layer.
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 160x320x3 RGB image   							| 
 | Input Normalization    | (pixel_value/255.0) - 0.5           |
-| Image Cropping    | 70 rows pixels from the top of the image <br> 25 rows pixels from the bottom of the image <br> 0 columns of pixels from the left of the image <br> 0 columns of pixels from the right of the image |
+| Image Cropping    | 70 rows pixels from the top of the image <br> 25 rows pixels from the bottom of the image <br> 0 columns of pixels from the left of the image <br> 0 columns of pixels from the right of the image <br> 65x320x3 RGB cropped image |
 | Convolution 5x5 | stride 2x2 output 24 channels | 
 | Activation      | relu                          |
 | Convolution 5x5 | stride 2x2 output 36 channels | 
@@ -71,22 +72,21 @@ model consisted of the following layers:
 | Activation      | relu  |
 | Convolution 3x3 | stride 1x1 output 64 channels | 
 | Activation      | relu  |
+| Flatten      | flatten  |
+| Dense        | dense 100 |
+| Dense        | dense 50 |
+| Dense        | dense 10 |
+| Dense        | dense 1 |
 
-
-
-My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
-
-The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
+Compile model using mean square error loss function and adam optimizer.
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
-
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
+The model used an adam optimizer, so the learning rate was not tuned manually.
 
 #### 4. Appropriate training data
 
