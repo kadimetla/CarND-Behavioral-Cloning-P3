@@ -130,7 +130,7 @@ I then recorded the vehicle recovering from the left side and right sides of the
 
 Then I repeated this process on track two in order to get more data points.
 
-To augment the data sat, I also flipped images and angles thinking that this would help. For example, here is an image that has then been flipped: I have not captured flipped images.
+To augment the data set, I also flipped images and angles thinking that this would help. For example, here is an image that has then been flipped: I have not captured flipped images.
 <!--
 ![alt text][image6]
 ![alt text][image7]
@@ -142,3 +142,8 @@ After the collection process, I had 10516 number of data points. I then preproce
 I finally randomly shuffled the data set using 80% training and 20% of the data into a validation set. 
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 2 as evidenced by validation loss. I used an adam optimizer so that manually training the learning rate wasn't necessary.
+
+### Video Implementation
+
+#### 1. Provide a link to your final video output.
+Here's a [https://s3-us-west-2.amazonaws.com/udacity.selfdrivecar/P3/run2.mp4]
