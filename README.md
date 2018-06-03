@@ -73,24 +73,27 @@ Note: There is known local system's setting issue with replacing "," with "." wh
 #### Saving a video of the autonomous agent
 
 ```sh
-python drive.py model.h5 run1
+python drive.py model.h5 run2
 ```
 
-The fourth argument, `run1`, is the directory in which to save the images seen by the agent. If the directory already exists, it'll be overwritten.
+The fourth argument, `run2`, is the directory in which to save the images seen by the agent. If the directory already exists, it'll be overwritten.
 
 ```sh
-ls run1
+ls run2
 
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_424.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_451.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_477.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_528.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_573.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_618.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_697.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_723.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_749.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_817.jpg
+-rw-r--r--  1 adi  staff   13329 Feb 18 19:45 2018_02_19_00_45_37_341.jpg
+-rw-r--r--  1 adi  staff   13329 Feb 18 19:45 2018_02_19_00_45_37_396.jpg
+-rw-r--r--  1 adi  staff   13329 Feb 18 19:45 2018_02_19_00_45_37_438.jpg
+-rw-r--r--  1 adi  staff   13439 Feb 18 19:45 2018_02_19_00_45_37_505.jpg
+-rw-r--r--  1 adi  staff   13439 Feb 18 19:45 2018_02_19_00_45_37_542.jpg
+-rw-r--r--  1 adi  staff   13439 Feb 18 19:45 2018_02_19_00_45_37_580.jpg
+-rw-r--r--  1 adi  staff   13546 Feb 18 19:45 2018_02_19_00_45_37_642.jpg
+-rw-r--r--  1 adi  staff   13546 Feb 18 19:45 2018_02_19_00_45_37_686.jpg
+-rw-r--r--  1 adi  staff   13546 Feb 18 19:45 2018_02_19_00_45_37_734.jpg
+-rw-r--r--  1 adi  staff   13593 Feb 18 19:45 2018_02_19_00_45_37_819.jpg
+-rw-r--r--  1 adi  staff   13593 Feb 18 19:45 2018_02_19_00_45_37_900.jpg
+-rw-r--r--  1 adi  staff   13593 Feb 18 19:45 2018_02_19_00_45_37_956.jpg
+-rw-r--r--  1 adi  staff   13507 Feb 18 19:45 2018_02_19_00_45_38_044.jpg
 ...
 ```
 
@@ -99,7 +102,7 @@ The image file name is a timestamp of when the image was seen. This information 
 ### `video.py`
 
 ```sh
-python video.py run1
+python video.py run2
 ```
 
 Creates a video based on images found in the `run1` directory. The name of the video will be the name of the directory followed by `'.mp4'`, so, in this case the video will be `run1.mp4`.
@@ -107,7 +110,7 @@ Creates a video based on images found in the `run1` directory. The name of the v
 Optionally, one can specify the FPS (frames per second) of the video:
 
 ```sh
-python video.py run1 --fps 48
+python video.py run2 --fps 48
 ```
 
 Will run the video at 48 FPS. The default FPS is 60.
